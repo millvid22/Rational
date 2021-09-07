@@ -13,4 +13,75 @@ public class RationalTest {
         x.add(y);
         Assert.assertEquals(3, x.numerator);
     }
+
+    @Test
+    public void testSub() {
+        Rational x = new Rational();
+        x.numerator = 3;
+        x.denominator = 4;
+        Rational y = new Rational();
+        y.numerator = 2;
+        y.denominator = 4;
+        x.subtract(y);
+        Assert.assertEquals(1, x.numerator);
+        Assert.assertEquals(4, x.denominator);
+    }
+
+    @Test
+    public void testMul() {
+        Rational x = new Rational();
+        x.numerator = 1;
+        x.denominator = 2;
+        Rational y = new Rational();
+        y.numerator = 2;
+        y.denominator = 2;
+        x.multiply(y);
+        Assert.assertEquals(1, x.numerator);
+        Assert.assertEquals(2, x.denominator);
+    }
+
+    @Test
+    public void testDiv() {
+        Rational x = new Rational();
+        x.numerator = 1;
+        x.denominator = 5;
+        Rational y = new Rational();
+        y.numerator = 2;
+        y.denominator = 5;
+        x.divide(y);
+        Assert.assertEquals(1, x.numerator);
+        Assert.assertEquals(2, x.denominator);
+    }
+
+
+    @Test
+    public void testEquals() {
+        Rational x = new Rational();
+        x.numerator = 1;
+        x.denominator = 2;
+        Rational y = new Rational();
+        y.numerator = 1;
+        y.denominator = 2;
+        Assert.assertTrue( x.equals(y));
+    }
+
+    @Test
+    public void testCompare() {
+        Rational x = new Rational();
+        x.numerator = 1;
+        x.denominator = 2;
+        Rational y = new Rational();
+        y.numerator = 1;
+        y.denominator = 4;
+        Assert.assertEquals(1, x.compareTo(y));
+    }
+
+    @Test
+    public void testToString() {
+        Rational x = new Rational();
+        x.numerator = 1;
+        x.denominator = 2;
+        Assert.assertEquals("1/2", x.toString());
+    }
+
 }
